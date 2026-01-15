@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:#722F37;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* ================= SCREEN CONTROL ================= */
+.screen{
+  display:none;
+  width:100%;
+  min-height:100vh;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.screen.active{
+  display:flex;
+}
+
+/* ================= BUTTON ================= */
+button{
+  padding:12px 30px;
+  border:none;
+  border-radius:25px;
+  background:#722F37;
+  color:#fff;
+  cursor:pointer;
+  font-size:16px;
+}
+
+/* ================= BALLOONS ================= */
+.balloon{
+  position:absolute;
+  width:36px;
+  height:50px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #fff7, #ff5c8a);
+  animation:float 12s linear infinite;
+  opacity:.9;
+}
+
+.balloon::after{
+  content:"";
+  position:absolute;
+  width:2px;
+  height:50px;
+  background:#eee;
+  left:50%;
+  bottom:-50px;
+  transform:translateX(-50%);
+}
+
+@keyframes float{
+  from{ transform:translateY(110vh); }
+  to{ transform:translateY(-200px); }
+}
+
+/* ================= CONFETTI ================= */
+.confetti{
+  position:absolute;
+  width:6px;
+  height:12px;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(120vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* ================= CAKE ================= */
+#screen1{
+  flex-direction:column;
+  color:#fff;
+  cursor:pointer;
+  text-align:center;
+}
+
+.stage-text{
+  font-size:20px;
+  margin-bottom:20px;
+}
+
+.candles{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.candle{
+  width:12px;
+  height:44px;
+  background:#fff;
+  border-radius:6px;
+  position:relative;
+}
+
+.flame{
+  width:16px;
+  height:20px;
+  background:orange;
+  border-radius:50%;
+  position:absolute;
+  top:-20px;
+  left:50%;
+  transform:translateX(-50%);
+  animation:flicker .5s infinite alternate;
+}
+
+@keyframes flicker{
+  from{opacity:.6;}
+  to{opacity:1;}
+}
+
+.cake{
+  width:300px;
+}
+
+.layer{
+  height:80px;
+  border-radius:24px;
+  margin-top:8px;
+}
+
+.layer1{background:#f59cab;}
+.layer2{background:#eaa3b2;}
+.layer3{background:#d88b97;}
+
+/* ================= CARD SCREENS ================= */
+.card{
+  background:#fff;
+  padding:40px;
+  border-radius:32px;
+  width:100%;
+  max-width:1100px;
+}
+
+h2{
+  text-align:center;
+  color:#722F37;
+  margin-bottom:30px;
+  font-size:30px;
+}
+
+.row{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+}
+
+.text{
+  max-width:700px;
+}
+
+.text p{
+  font-size:18px;
+  line-height:2;
+  color:#444;
+}
+
+.photos{
+  display:grid;
+  gap:16px;
+}
+
+.photos img{
+  width:100%;
+  max-height:220px;
+  object-fit:contain;
+  background:#f4f4f4;
+  padding:10px;
+  border-radius:16px;
+}
+
+.center{
+  text-align:center;
+  margin-top:30px;
+}
+
+@media(max-width:768px){
+  .row{ flex-direction:column; }
+  .card{ padding:24px; }
+  h2{ font-size:22px; }
+  .text p{ font-size:16px; line-height:1.8; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎶 MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ================= SCREEN 1 : CAKE ================= -->
+<div id="screen1" class="screen active">
+  <p class="stage-text">🎂 Blow or tap the cake</p>
+
+  <div class="candles">
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+  </div>
+
+  <div class="cake">
+    <div class="layer layer1"></div>
+    <div class="layer layer2"></div>
+    <div class="layer layer3"></div>
+  </div>
+</div>
+
+<!-- ================= SCREEN 2 ================= -->
+<div id="screen2" class="screen">
+  <div class="card">
+    <h2>For My Forever Person 💕</h2>
+    <div class="row">
+      <div class="text">
+        <p>
+     Some people come into your life quietly and end up meaning everything 💕. Meeting you in 2022 was one of those moments I didn’t know I needed, but now I can’t imagine my world without you 🫶. You’ve seen me at my best and my worst 😅😭 and stayed anyway, and that’s something I’ll always be grateful for 💖. With you, life feels lighter, stronger, and more meaningful ✨🔥. I don’t just want memories with you — I want a lifetime ❤️💫. Growing old, building a life, and choosing you as my person through every season is all I’ve ever wanted 🥰💞.
+
+I met you in 2022, and from that moment my life changed in the most beautiful way 💕. You’re not just my best friend, you’re my forever person 🫶 — the one I laugh with 😄, cry with 😢, and dream with ✨. You feel like home to me, like a safe place I never want to leave 🏡💖. I can’t imagine my life without you in it, and I don’t want to ❤️. I want to live this whole life by your side, growing together 🌟, supporting each other 🤗, and choosing each other every single day 💞. No matter where life takes us, you’ll always be my best friend forever 🔥💫.#
+
+        </p>
+      </div>
+      <div class="photos">
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+        <img src="photo3.jpg">
+      </div>
+    </div>
+    <div class="center">
+      <button onclick="goFinal()">Click here ➜</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SCREEN 3 ================= -->
+<div id="screen3" class="screen">
+  <div class="card">
+    <h2>Happy Birthday My BSFF 🫶</h2>
+    <div class="photos" style="max-width:500px;margin:0 auto 30px;">
+      <img src="photo4.jpg">
+    </div>
+    <div class="text" style="margin:auto;">
+      <p>
+Happy Birthday to my forever bestie 🫶🎉! You’re not just my best friend, you’re my person and the one who means everything to me ❤️. I love your voice so much; it’s precious to me and always makes me feel calm and happy 🥹✨. Having VC with you is one of my favorite things ever, and honestly, adoring you is my favorite thing to do 💖. You look so incredibly pretty — the prettiest in the world to me — that sometimes I end up blushing because you look itnaa good 😳💕. You’re my perfect BSFF, and I don’t need anyone else in my life; it’s either you or no one 🤍. You are the best for me, perfect for me, and more than enough in every way 🫶. With me or without me, I always want you to be happy forever ❤️. I hope your birthday and your whole life are filled with love, peace, laughter, and everything your heart truly deserves 🎂✨. Happy Birthday once again, my best friend forever 💫
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+const screen1=document.getElementById("screen1");
+const screen2=document.getElementById("screen2");
+const screen3=document.getElementById("screen3");
+const music=document.getElementById("bgMusic");
+
+let triggered=false;
+
+/* 🎈 BALLOONS (A17 SAFE) */
+for(let i=0;i<30;i++){
+  const b=document.createElement("div");
+  b.className="balloon";
+  b.style.left=Math.random()*100+"%";
+  b.style.animationDuration=10+Math.random()*6+"s";
+  document.body.appendChild(b);
+}
+
+/* 🎤 MIC BLOW DETECTION */
+navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{
+  const ctx=new AudioContext();
+  const mic=ctx.createMediaStreamSource(stream);
+  const analyser=ctx.createAnalyser();
+  mic.connect(analyser);
+  const data=new Uint8Array(analyser.fftSize);
+
+  function detect(){
+    analyser.getByteTimeDomainData(data);
+    let volume=0;
+    for(let i=0;i<data.length;i++){
+      volume+=Math.abs(data[i]-128);
+    }
+    if(volume>2500 && !triggered){
+      celebrate();
+    }
+    requestAnimationFrame(detect);
+  }
+  detect();
+}).catch(()=>{});
+
+/* TAP FALLBACK */
+screen1.addEventListener("click",celebrate);
+
+function celebrate(){
+  if(triggered) return;
+  triggered=true;
+
+  music.play().catch(()=>{});
+  document.querySelectorAll(".flame").forEach(f=>f.style.display="none");
+
+  /* 🎉 POPPERS (A17 SAFE) */
+  for(let i=0;i<500;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"%";
+    c.style.top="-20px";
+    c.style.background=`hsl(${Math.random()*360},80%,60%)`;
+    c.style.animationDuration=1.5+Math.random()*1.2+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),3000);
+  }
+
+  setTimeout(()=>{
+    screen1.classList.remove("active");
+    screen2.classList.add("active");
+  },1500);
+}
+
+function goFinal(){
+  screen2.classList.remove("active");
+  screen3.classList.add("active");
+}
+</script>
+
+</body>
+</html>
